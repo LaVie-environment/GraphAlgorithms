@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from collections import deque, defaultdict
 
 # Step 1: Create the graph from the group
