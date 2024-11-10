@@ -1,0 +1,9 @@
+Invitation to the event
+Graph Structure
+
+I use an undirected graph because the problem requires maximizing the ticket distribution by visiting three friends who can give the tickets to the most people within the week. That means there is a mutual connection between the friends. 
+Honza, Pepa, Anna, Jarek, Tomas was represented as a node in the graph. Each node represents an acquaintance to whom tickets can be distributed.
+
+I use the Breath-First Search algorithm because it finds all reachable nodes from a starting node using the shortest path possible.
+
+Though Breath-First Search algorithm could be computationally expensive in larger networks but it works well on smaller networks.
