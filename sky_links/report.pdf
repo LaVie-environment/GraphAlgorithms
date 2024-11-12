@@ -1,0 +1,13 @@
+
+Graph Structure
+The problem domain was represented using a graph data structure:
+    Nodes: Cities (e.g., Prague, Berlin, Paris, Vienna, London)
+    Edges: Air routes between Cities
+The graph was implemented using an adjacency list representation, because it identifies alternative path between cities.
+
+Algorithms Used
+The Depth-First Search (DFS) algorithm was used because of its ability to explore all possible paths from a starting city to a destination city.
+
+Evaluation
+The DFS approach successfully identified redundant routes like London -> Paris and Paris -> Vienna.
+What was learned beyond the discussed issues: how graph algorithms can be applied to real-world problems like route optimization in transportation networks.
