@@ -45,5 +45,5 @@ routes = {
 unvisited_cities = find_unvisited_cities(desired_places, routes)
 
 print("Cities that would be beneficial to visit:")
-for city in unvisited_cities:
-    print(", ".join(map(str, unvisited_cities)))
+# for city in unvisited_cities:
+print(", ".join(map(str, unvisited_cities)))
