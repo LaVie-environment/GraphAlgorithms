@@ -1,0 +1,5 @@
+City: Prague, Berlin, Paris, Vienna, London
+LS2021: Prague -> Berlin -> Paris -> Prague
+ZS2020: Prague -> London -> Paris -> Vienna
+AB111: Vienna -> London -> Paris -> Berlin
+XYZ007: Prague -> Paris -> Vienna

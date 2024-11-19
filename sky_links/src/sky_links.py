@@ -1,45 +1,60 @@
 #!/usr/bin/env python3
 
-from collections import defaultdict
+# Step 1: Load data from file and parse routes
+def load_routes_from_file(filename):
+    routes = {}
+    with open(filename, 'r') as file:
+        for line in file:
+            line = line.strip()
+            if ":" in line and "->" in line:
+                route_name, path = line.split(": ")
+                cities = path.split(" -> ")
+                routes[route_name.strip()] = cities
+    return routes
 
-# Step 1: Define the input data
-routes = {
-    "LS2021": ["Prague", "Berlin", "Paris", "Prague"],
-    "ZS2020": ["Prague", "London", "Paris", "Vienna"],
-    "AB111": ["Vienna", "London", "Paris", "Berlin"],
-    "XYZ007": ["Prague", "Paris", "Vienna"]
-}
+# Step 2: Build the graph of direct connections
+def build_graph(routes):
+    graph = {}
+    for route in routes.values():
+        for i in range(len(route) - 1):
+            start, end = route[i], route[i + 1]
+            if start not in graph:
+                graph[start] = []
+            if end not in graph[start]:
+                graph[start].append(end)
+    return graph
 
-# Step 2: Build the graph
-graph = defaultdict(list)
-for route in routes.values():
-    for i in range(len(route) - 1):
-        start, end = route[i], route[i + 1]
-        graph[start].append(end)
-
-# Step 3: Function to check for an alternative path (including indirect connections)
+# Step 3: Check for alternative paths using Depth-First Search (DFS)
 def has_alternative_path(graph, start, end):
-    # Helper function to perform DFS
     def dfs(city, target, visited):
         if city == target:
             return True
         visited.add(city)
-        for neighbor in graph[city]:
+        for neighbor in graph.get(city, []):
             if neighbor not in visited and dfs(neighbor, target, visited):
                 return True
         return False
-
     return dfs(start, end, set())
 
-# Step 4: Test specific routes for redundancy
-redundant_routes = []
-test_routes = [("London", "Paris"), ("Paris", "Vienna")]
+# Step 4: Identify redundant connections based on alternative paths
+def find_redundant_connections(graph, connections_to_test):
+    redundant_routes = []
+    for city, destination in connections_to_test:
+        if has_alternative_path(graph, city, destination):
+            redundant_routes.append(f"{city} -> {destination}")
+    return redundant_routes
 
-for city, destination in test_routes:
-    if has_alternative_path(graph, city, destination):
-       redundant_routes.append(f"{city} -> {destination}")
+# Load routes from file and create the graph
+routes = load_routes_from_file("routes.txt")
+graph = build_graph(routes)
 
-# Output the redundant routes
+# Define connections to check
+connections_to_test = [("London", "Paris"), ("Paris", "Vienna")]
+
+# Identify and print redundant connections
+redundant_routes = find_redundant_connections(graph, connections_to_test)
+
+# Output results
 print("The output is a list of connections between cities that are in addition:")
 for route in redundant_routes:
     print(route)
