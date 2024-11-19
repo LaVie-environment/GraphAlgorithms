@@ -1,49 +1,39 @@
 #!/usr/bin/env python3
 
-from collections import defaultdict
+# Step 1: Load data from file and parse into desired places and routes
+def load_data_from_file(filename):
+    with open(filename, 'r') as file:
+        desired_places = []
+        routes = {}
+        for line in file:
+            line = line.strip()
+            if line.startswith("Places:"):
+                # Parse list of cities
+                desired_places = [place.strip() for place in line.split(":")[1].split(",")]
+            elif ":" in line and "->" in line:
+                # Parse routes for each line
+                route_name, path = line.split(": ")
+                cities = [city.strip() for city in path.split("->")]
+                routes[route_name.strip()] = cities
+    return desired_places, routes
 
+# Step 2: Find cities that were not visited in any route
 def find_unvisited_cities(desired_places, routes):
-    # Create sets for easier lookup
-    desired_places_set = set(desired_places)
-    
-    # Build graph from routes
-    graph = defaultdict(set)
+    # Collect all visited cities
+    visited_cities = set()
     for route in routes.values():
-        for i in range(len(route) - 1):
-            city1, city2 = route[i], route[i + 1]
-            graph[city1].add(city2)
-            graph[city2].add(city1)
-
-    # Find unvisited cities
-    unvisited_cities = []
-    for place in desired_places_set:
-        if place not in graph:
-            unvisited_cities.append(place)
-        else:
-            visited_neighbors = set()
-            for neighbor in graph[place]:
-                visited_neighbors.add(neighbor)
-            
-            if len(visited_neighbors) == 0:
-                unvisited_cities.append(place)
-            elif len(graph[place]) != len(visited_neighbors):
-                unvisited_cities.append(place)
-
+        visited_cities.update(route)
+    
+    # Identify unvisited cities by comparing to desired places
+    unvisited_cities = [city for city in desired_places if city not in visited_cities]
     return sorted(unvisited_cities)
 
-
-# Input data
-desired_places = ["Prague", "Berlin", "Rome", "Paris", "Vienna", "London", "Brno"]
-routes = {
-    "2018": ["Prague", "Berlin", "Paris", "Prague"],
-    "2019": ["Prague", "London", "Paris", "Vienna"],
-    "2020": ["Vienna", "London", "Paris", "Berlin"],
-    "2021": ["Prague", "Paris", "Vienna"]
-}
+# Load data from file
+desired_places, routes = load_data_from_file("routes.txt")
 
 # Find unvisited cities
 unvisited_cities = find_unvisited_cities(desired_places, routes)
 
+# Output results
 print("Cities that would be beneficial to visit:")
-for city in unvisited_cities:
-    print(", ".join(map(str, unvisited_cities)))
+print(", ".join(unvisited_cities))

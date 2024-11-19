@@ -1,0 +1,5 @@
+Places: Prague, Berlin, Rome, Paris, Vienna, London, Brno
+2018: Prague -> Berlin -> Paris -> Prague
+2019: Prague -> London -> Paris -> Vienna
+2020: Vienna -> London -> Paris -> Berlin
+2021: Prague -> Paris -> Vienna
