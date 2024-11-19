@@ -1,0 +1,7 @@
+Solution Description
+
+Graph Structure: Representing the network as an undirected graph where nodes are people, and edges are the times it takes for each pair to meet.
+
+Algorithm Used: Implement Dijkstra's algorithm because it finds the shortest paths from a single starting point (“You”) to all other nodes in a weighted graph, which fits the task’s need to minimize message delivery time.
+
+Evaluation: Though this method is suitable for finding the shortest message times across the network but it posses a challenge when it comes to parsing the input and updating distances.
