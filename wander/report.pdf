@@ -1,0 +1,8 @@
+Solution Description
+
+Graph Structure: The problem is represented as a graph where each signpost is a node, and each route from one signpost to the next forms and edge. The deges are directional, representing the path that tourists take between signposts.
+
+Algorithm Used: A linear search was used to detect consecutive repeats of signposts. It identified locations where tourists might have backtracked, indicating strained navigation by checking is a signpost appears consecutively within each route.
+
+Evaluation: This approach works well for small sets of data but may need optimization or more advanced traversal methods if applied to much larger datasets.
+

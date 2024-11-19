@@ -1,0 +1,4 @@
+T01: Keprník -> Počaply -> Střekov -> Střekov -> Rovina
+T02: Satalice -> Keprník -> Mandava -> Mandava
+T03: Počaply -> Satalice -> Keprník -> Satalice
+T04: Střekov -> Mandava -> Počaply
