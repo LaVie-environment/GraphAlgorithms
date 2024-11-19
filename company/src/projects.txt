@@ -1,0 +1,5 @@
+Employee: Honza, Pepa, Anna, Jarek, Tomas
+P01: Honza, Pepa, Anna
+P01: Pepa, Anna, Jarek
+P01: Pepa, Anna, Jarek, Tomas
+P01: Honza, Tomas

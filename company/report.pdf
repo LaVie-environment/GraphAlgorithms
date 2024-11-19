@@ -1,0 +1,7 @@
+Solution Description
+
+Graph Structure: The graph is represented as a set of unique pairs (edges) between employees (nodes) who have worked together on a project. Each employee pair represents a bidirectional connection (undirected edge), indicating they collaborated on at least one project.
+
+Algorithm Used: The solution uses a pair-checking algorithm with nested loops to iterate over each project's solvers, storing unique employee pairs in a set.
+
+Evaluation: The solution is efficient and easy to implement for small datasets, with the set structure allowing fast lookup and insertion operations. It becomes a challenge when handling a very large datasets where an adjacency list might be preferable to avoid duplicating pairs.
