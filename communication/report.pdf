@@ -1,0 +1,7 @@
+Solution Description:
+
+Graph Structure: The problem is represented as a directed graph where each employee is a node, and directed edges represent messages sent from one employee to another. Each directed edges indicates as a one-way communication attempt, allowing us to detect missing reciprocal connections by analyzing the directionality of edges between nodes.
+
+Algorithms Used: It uses a nested loop to check each pair of directed edges, verifying if every sender-receiver communication is reciprocated.
+
+Evaluation: The solution is efficient for small sets of communication data. One of its challenge was accurately distinguishing between missing communication.
