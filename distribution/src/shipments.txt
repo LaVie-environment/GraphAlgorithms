@@ -1,0 +1,10 @@
+Store: Prague, Berlin, Paris, Vienna, London
+Z01: Prague -> Berlin
+Z02: Paris -> Prague
+Z03: Prague -> London
+Z04: Paris -> Vienna
+Z05: Vienna -> London
+Z06: Paris -> Berlin
+Z07: Prague -> Paris
+Z08: London -> Vienna
+Z09: Prague -> London

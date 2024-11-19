@@ -1,0 +1,6 @@
+Solution Description
+Graph Structure: The problem is represented as a directed graph, where each warehouse is a node, each shipment from one warehouse to another is a directed edge.
+
+Algorithms Used: The algorithm iterates over each shipment and uses dictionaries to count the number of exports (outgoing edges) and imports (incoming edges) for each warehouse.
+
+Evalutaion: Although solution is efficient for small to medium datasets and easy to implement, but a challenge occurs when ensuring that all routes were counted accurately without duplicates.

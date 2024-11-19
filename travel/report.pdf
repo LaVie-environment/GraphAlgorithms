@@ -1,0 +1,7 @@
+Solution Description
+
+Graph Structure: The cities are nodes and directed tours between cities are edges. Each edge is labeled in uppercase or lowercase to indicate the originating travel agency, and we use a set to store unique edges to eliminate duplicates.
+
+Algorithms Used: A set-based filtering algorithm was implemented to remove duplicate tours, making it efficient and simple.
+
+Evaluation: The solution effectively removes duplicates, providing an optimal unique set of tours by using a straightforward set-based approach. Advanced data structure might be required for much larger datasets.
