@@ -1,0 +1,7 @@
+Solution Description
+
+Graph Structure: The control nodes are represented as graph nodes, and the connections between them are represented as edges with weights corresponding to the activation times. It models the problem as a weighted, undirected graph where the goal is to connect all nodes efficiently.
+
+Algorithm Used: Kruskal's MST algorithm was used because it efficiently finds a subset of edges that connects all nodeswithout forming cycles while minimizing the total edge weight.
+
+Evaluation: Kruskal's MST algorithm makes this problem seems easy.

@@ -1,0 +1,8 @@
+nodes: engines, navigation, communication, bridge, oxygen
+edges:
+engines - oxygen: 15
+navigation - communication: 90
+bridge - oxygen: 20
+engines - navigation: 50
+communication - bridge: 35
+oxygen - communication: 15
